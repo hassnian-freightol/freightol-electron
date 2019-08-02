@@ -6,14 +6,16 @@
   "scripts": {
     "postinstall": "install-app-deps",
     "start": "electron .",
-    "pack": "build --dir",
-    "dist": "electron-builder"
+    "pack": "electron-builder --dir",
+	"dist": "electron-builder --x64",
+	"dist-all": "electron-builder -mwl",
+	"clean": "rimraf ./dist",
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "update-electron-app": "^1.5.0"
+    "electron-updater": "^4.1.2"
   },
   "devDependencies": {
     "electron": "^6.0.0",
