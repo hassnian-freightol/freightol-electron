@@ -1,20 +1,24 @@
 {
   "name": "freightol-electron",
-  "version": "1.0.0",
+  "version": "0.0.4",
   "description": "",
   "main": "index.js",
+  "repository": "github.com/hassnian-freightol/freightol-electron",
   "scripts": {
     "postinstall": "install-app-deps",
     "start": "electron .",
     "pack": "electron-builder --dir",
-	"dist": "electron-builder --x64",
-	"dist-all": "electron-builder -mwl",
-	"clean": "rimraf ./dist",
+    "dist": "electron-builder --x64",
+    "dist-all": "electron-builder -mwl",
+    "clean": "rimraf ./dist",
+    "publish": "electron-builder --x64 -p always"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "electron-is-dev": "^1.1.0",
+    "electron-log": "^3.0.7",
     "electron-updater": "^4.1.2"
   },
   "devDependencies": {
@@ -22,6 +26,14 @@
     "electron-builder": "^21.2.0"
   },
   "build": {
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "hassnian-freightol",
+		"repo": "freightol-electron",
+		"token": "cff2136d7ad24b3321776b7289f407183dd93cfb"
+      }
+    ],
     "appId": "enupal-electronv1",
     "asar": true,
     "dmg": {
